@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="{% static 'css/live.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+        <style>
+            a{
+            text-decoration: none;
+            color:black
+            }
+            .logout{
+                position:absolute;
+                top:23px;
+                right:10px;
+            }
+            
+                    </style>
+    </head>
+    <body>
+        <div class="top">
+            <img src="{% static 'logo.svg' %}" />
+            {% if user.is_authenticated %}
+            <div style="float: right; height: 30px">
+                <img src="{% static 'alert.svg' %}" />
+                <img
+                    src="{% static 'ticket.svg' %}"
+                    style="margin-right: 20px"
+                />
+                <b class="logout" style="color: #ff552b">3개</b>
+            </div>
+            {% endif %}
+            <b
+                style="
+                    float: right;
+                    text-decoration: underline;
+                    color: gray;
+                    font-size: 7pt;
+                "
+            >
+                {% if user.is_authenticated %}
+
+                <a href="{% url 'users:logout' %}">로그아웃</a>
+                {% else %}
+                <a href="{% url 'users:login' %}">로그인</a>
+                {% endif %}
+            </b>
+        </div>
+        <div>
+            <ul class="menu1">
+                <li>
+                    <b><a href="{% url 'lives:live_list' %}">홈</a></b>
+                </li>
+                <li><a href="{% url 'lives:live_recent' %}">최신 방송순</a></li>
+                <li><a href="{% url 'lives:live_soon' %}">라이브 예고</a></li>
+            </ul>
+        </div>
+        <p>지금 <b style="color: #ff552b;">오사카</b>는?</p>
+        <div class="container">
+            {% if osaka1 %}
+            <a href="{% url 'lives:live_detail' osaka1.pk %}">
+                <img src="{{osaka1.thumbnail.url}}" class="left" style="width: 220px; height: 380px"/>
+                <p>{{osaka1.state}}</p>
+                <p>{{osaka1.title}}</p>
+            </a>
+            {% else %}
+            <img src="" class="left" style="width: 220px; height: 380px"/>
+            {% endif %}
+            <div class="highlight">
+                {% for osaka in osakas %}
+                    <a href="{% url 'lives:live_detail' osaka.pk %}"><img src="{{osaka.thumbnail.url}}" class="box1" style="width: 100px; height: 120px"/></a>
+                {% empty %}
+                
+                    <img src="" alt="없음" class="box1" style="width: 100px; height: 120px" />
+                
+                
+                    <img src="" alt="없음" class="box1" style="width: 100px; height: 120px"/>
+                
+                
+                    <img src="" alt="없음" class="box1" style="width: 100px; height: 120px"/>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <b>오늘의 Live</b>
+        <div>
+            <ul class="today">
+                <li class="box2">채팅 많은</li>
+                <li class="box2">좋아요 폭발</li>
+                <li class="box2">조회수 급상승</li>
+            </ul>
+        </div>
+        <div class="container2">
+            {% for video in video %}
+            <div class="live_item">
+                <img src="{{video.thumbnail.url}}" />
+            </div>
+            {% empty %} {% endfor %}
+        </div>
+        <footer>
+            <div class="footer">
+                <ul class="foot">
+                    <li>
+                        <a href="{% url 'lives:live_list' %}"
+                            ><img src="{% static 'Group 4on.svg' %}"
+                        /></a>
+                    </li>
+                    <li>
+                        <a href="{% url 'dispatch:all_list' %}"><img src="{% static 'Group 3.svg' %}" /></a>
+                    </li>
+                    <li>
+                        <a href="{% url 'travels:travel_list' %}"><img src="{% static 'Group 2.svg' %}" /></a>
+                    </li>
+                    <li>
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'users:mypage' %}">
+                            <img src="{% static 'img/Group 511.svg' %}" />
+                        </a>
+                        {% else %}
+                        <a href="{% url 'users:login' %}">
+                            <img src="{% static 'img/Group 511.svg' %}" />
+                        </a>
+                        {% endif %}</li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>

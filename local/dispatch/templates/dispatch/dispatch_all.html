@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="{% static 'css/base2.css' %}" />
+        <style>
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        </style>
+        <script>
+            // HTML이 로드된 후 실행되는 함수
+            window.onload = function() {
+                var dispatchTimes = document.getElementsByClassName("dispatch-time");
+                for (var i = 0; i < dispatchTimes.length; i++) {
+                    var createdAt = dispatchTimes[i].textContent;
+                    var parsedTime = moment(createdAt, "YYYY-MM-DDTHH:mm:ssZ").fromNow();
+                    dispatchTimes[i].textContent = parsedTime;
+                }
+            };
+        </script>
+    </head>
+    <body>
+        <div class="top">
+            <img src="{% static 'logo.svg' %}" />
+            <img src="{% static 'alert.svg' %}" />
+            <img src="{% static 'ticket.svg' %}" />
+            <b style="color: #ff552b">3개</b>
+        </div>
+
+        <div>
+            <ul class="menu1">
+                <li>
+                    <a href="{% url 'dispatch:all_list' %}"><b>전체</b></a>
+                </li>
+                <li>
+                    <a href="{% url 'dispatch:near_list' %}">여기 근처</a>
+                </li>
+                <li>
+                    <a href="{% url 'dispatch:my_list' %}">내 파견</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="prof">
+
+            <div style="display: flex; flex-direction: row">
+                <div style="width: 40px; height: 40px">
+                    <img
+                        style="width: 40px; height: 40px; border-radius: 100%"
+                        src="{% static 'profile.svg' %}"
+                        style="border-radius: 10px"
+                    />
+                </div>
+                {% for dispatch in dispatchs %}
+                <div style="margin-left: 5px">
+                    <b>{{ dispatch.author }}</b><br />{{ dispatch.city }}, {{
+                    dispatch.country }}
+                </div>
+            </div>
+            <p class="box5">
+                <a
+                    href="{% url 'dispatch:dispatch_detail' pk=dispatch.pk %}"
+                    style="text-decoration: none; color: black"
+                    >{{ dispatch.content }}</a
+                >
+            </p>
+            <span class="dispatch-time"
+                >{{ dispatch.created_at|date:'Y-m-dTH:i:s' }}</span
+            >
+            <p>답변 {{ dispatch.comment_set.count }}개 · 나도 궁금해요 12</p>
+            <hr />
+            <div class="share">
+                <b>저장하기</b>
+                <b
+                    ><a
+                        href="{% url 'dispatch:dispatch_detail' pk=dispatch.pk %}"
+                        >댓글쓰기</a
+                    >
+                </b>
+                <b><button onclick="">?나도궁금</button></b>
+
+            </div>
+            <hr />
+            {% endfor %}
+            <!---->
+
+            <div class="prof">
+                <div style="display: flex; flex-direction: row">
+                    <div style="width: 40px; height: 40px">
+                        <img
+                            style="
+                                width: 40px;
+                                height: 40px;
+                                border-radius: 100%;
+                            "
+                            src="{% static 'profile.svg' %}"
+                        />
+                    </div>
+                    <div style="margin-left: 5px">
+                        {% for comment in dispatch.comment_set.all %} {{
+                        comment.author }}리얼로컬<br />
+                    </div>
+                </div>
+            </div>
+
+            <span style="margin-left: 50px">{{ comment.content }}</span>
+            {% empty %} {% endfor %}
+
+            <!--        <b id="diff" name="diff">다른 답변 보기</b>-->
+            <!--        <div class="empty"></div>-->
+            <!---->
+            <a href="{% url 'dispatch:dispatch_post' %}"
+                ><img src="{% static 'plus.svg' %}" id="plus"
+            /></a>
+            <footer>
+                <div class="footer">
+                    <ul class="foot">
+                        <li>
+                            <a href=""
+                                ><img src="{% static 'Group 4.svg' %}"
+                            /></a>
+                        </li>
+                        <li>
+                            <a href=""
+                                ><img src="{% static 'Group 3on.svg' %}"
+                            /></a>
+                        </li>
+                        <li><img src="{% static 'Group 2.svg' %}" /></li>
+                        <li><img src="{% static 'Group 511.svg' %}" /></li>
+                    </ul>
+                </div>
+            </footer>
+            <script src="{% static 'js/moreComments.js' %}"></script>
+            <
+        </div>
+
+    </body>
+</html>
