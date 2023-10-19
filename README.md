@@ -1,5 +1,7 @@
 # 세계와 덕성을 잇(IT)다 feat.2023-Herethon-4
 세계와 덕성을 잇(IT)다 현지 파견 여행 정보 서비스 Local
+<img src="https://github.com/Algo-rithmta/Local/assets/90364711/b136ccec-0417-460d-bd9d-1f418661c368">
+
 <br/>
 # 📌 서비스 소개
 
