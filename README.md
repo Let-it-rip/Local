@@ -1,5 +1,5 @@
-# 2023-Herethon-4
-2023 여기톤 : HERETHON 4조 현지 파견 여행 정보 서비스 Local
+# 세계와 덕성을 잇(IT)다 feat.2023-Herethon-4
+세계와 덕성을 잇(IT)다 현지 파견 여행 정보 서비스 Local
 <br/>
 # 📌 서비스 소개
 
