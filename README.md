@@ -21,36 +21,28 @@
 - **팀원 소개**
   <table border="" cellspacing="0" cellpadding="0" width="100%">
   <tr width="100%">
-  <td align="center">이지민</a></td>
-  <td align="center">김현지</a></td>
-  <td  align="center">이예지</a></td>
-  <td align="center">박세은</a></td>
-  <td align="center">김한선</a></td>
+  <td  align="center">김채현</a></td>
+  <td  align="center">노하림</a></td>
+  <td align="center">오세은</a></td>
   <td  align="center">윤정원</a></td>
   </tr>
   <tr width="100%">
   <td  align="center"><a href="https://imgbb.com/"><img src="https://i.ibb.co/sWXnzcJ/befbedf87e51f5b02aac8b882ada60fd-sticker.png" alt="befbedf87e51f5b02aac8b882ada60fd-sticker" border="0" width="90px"></a></td>
-  <td  align="center"><a href="https://imgbb.com/"><img src="https://i.ibb.co/MRr1QMW/f67635fddb50d05f2d0f142e63b0ab5c-sticker.png" alt="f67635fddb50d05f2d0f142e63b0ab5c-sticker" border="0" width="90px"></a></td>
   <td  align="center"><a href="https://imgbb.com/"><img src="https://i.ibb.co/2KDG82L/d006044e5996d0023cd2e18425aa4677-sticker.png" alt="d006044e5996d0023cd2e18425aa4677-sticker" border="0" width="90px"></a></td>
   <td  align="center"><a href="https://imgbb.com/"><img src="https://i.ibb.co/sWXnzcJ/befbedf87e51f5b02aac8b882ada60fd-sticker.png" alt="befbedf87e51f5b02aac8b882ada60fd-sticker" border="0" width="90px"></a></td>
   <td  align="center"><a href="https://imgbb.com/"><img src="https://i.ibb.co/MRr1QMW/f67635fddb50d05f2d0f142e63b0ab5c-sticker.png" alt="f67635fddb50d05f2d0f142e63b0ab5c-sticker" border="0" width="90px"></a></td>
-  <td  align="center"><a href="https://imgbb.com/"><img src="https://i.ibb.co/2KDG82L/d006044e5996d0023cd2e18425aa4677-sticker.png" alt="d006044e5996d0023cd2e18425aa4677-sticker" border="0" width="90px"></a></td>
   </tr>
   <tr width="100%">
   <td  align="center">기획·디자인</td>
   <td  align="center">프론트엔드</td>
   <td  align="center">프론트엔드</td>
   <td  align="center">백엔드</td>
-  <td  align="center">백엔드</td>
-  <td  align="center">백엔드</td>
      </tr>
       <tr width="100%">
           <td  align="center"><p>전체 서비스 기획</p><p>전체 GUI 디자인</p></td>
-           <td  align="center"><p>로컬 라이브 프론트 개발</p><p>로컬 파견 프론트 개발</p></td>
-            <td  align="center"><p>로그인 및 회원가입 프론트 개발</p><p>로컬 여행 프론트 개발</p></td>
-        <td  align="center"><p>로그인 및 회원가입 백 개발</p><p>팔로잉 기능 백 개발</p></td>
-           <td  align="center"><p>로컬 파견 백 개발</p></td>
-            <td  align="center"><p>로컬 여행 백 개발</p><p>전체 개발 총괄</p></td>
+          <td  align="center"><p>로컬 라이브 프론트 개발</p><p>로컬 파견 프론트 개발</p></td>
+          <td  align="center"><p>로그인 및 회원가입 프론트 개발</p><p>로컬 여행 프론트 개발</p></td>
+          <td  align="center"><p>로컬 여행 백 개발</p><p>전체 개발 총괄</p></td>
      </tr>
   </table>
 
